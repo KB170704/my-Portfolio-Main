@@ -1,0 +1,262 @@
+/*
+  ==================================================
+  Base About Section Styling - ADJUSTED FOR VERTICAL NAVBAR
+  ==================================================
+*/
+
+#about {
+    /* Changed background color to a lighter, more standard shade for contrast */
+    background-color: #ffffff;
+    /* Changed from #ff0000 to maintain a professional look */
+    padding: 6rem 0;
+    overflow: hidden;
+    /* New: Subtle background pattern for texture */
+    background-image: radial-gradient(#99bee4 0.5px, transparent 0.5px);
+    /* Adjusted color */
+    background-size: 15px 15px;
+
+    /* 💡 KEY FIXES for Vertical Navbar Clearance (Desktop) */
+    margin-left: 250px;
+    /* Push the entire section right by the navbar width */
+    width: calc(100% - 250px);
+    /* Ensure section takes up the remaining width */
+
+    /* Re-adjust horizontal padding to give space on the left side of the content */
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/*
+  ==================================================
+  Heading Styling and Animation
+  ==================================================
+*/
+#about .text-center h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    position: relative;
+    animation: slideInUp 0.8s ease-out;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#about .text-center h2:hover {
+    color: #ff6b6b;
+    /* Accent color highlight on hover */
+    transform: scale(1.02);
+}
+
+#about .text-center h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff6b6b;
+    /* Accent color line */
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.4s ease-in-out;
+}
+
+#about .text-center h2:hover::after {
+    width: 90px;
+    /* Extend underline on hover */
+}
+
+#about .text-center p {
+    font-size: 1.1rem;
+    color: #061f35;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/*
+  ==================================================
+  Card Styling and Animation
+  ==================================================
+*/
+.about-card {
+    background-color: #ffffff;
+    border: none !important;
+    border-radius: 1rem !important;
+    padding: 2rem !important;
+    transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
+    cursor: default;
+
+    /* Base Animation: Card Pop-in */
+    animation: zoomIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    /* Slightly more aggressive lift */
+    box-shadow: 0 25px 35px rgba(255, 107, 107, 0.185) !important;
+    /* Lighter, more standard shadow */
+}
+
+/*
+  ==================================================
+  MUI Component Overrides & Custom Details
+  ==================================================
+*/
+/* Avatar Customization */
+.about-card .MuiAvatar-root {
+    box-shadow: 0 0 0 10px rgba(13, 110, 253, 0.3);
+    /* Ring effect */
+    transition: all 0.5s ease;
+}
+
+.about-card:hover .MuiAvatar-root {
+    box-shadow: 0 0 0 8px rgba(225, 107, 107, 0.4);
+    /* Accent ring on card hover */
+    transform: rotate(10deg);
+}
+
+/* Contact Info Styling */
+.about-card .MuiTypography-body1 {
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.about-card .MuiTypography-body1 .MuiSvgIcon-root {
+    color: #ff6b6b !important;
+    transition: transform 0.3s ease;
+}
+
+.about-card .MuiTypography-body1:hover {
+    color: #0d6efd;
+    /* Highlight text on hover */
+}
+
+.about-card .MuiTypography-body1:hover .MuiSvgIcon-root {
+    transform: scale(1.1);
+}
+
+/* Description Text */
+.about-card .mt-3 {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/*
+  ==================================================
+  Keyframe Animations
+  ==================================================
+*/
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*
+  ==================================================
+  Media Queries - ADJUSTED FOR VERTICAL NAVBAR COLLAPSE
+  ==================================================
+*/
+
+/* Desktop - Vertical Navbar Active (Above 992px) */
+@media (min-width: 993px) {
+
+    /* Card Staggered Animation for Desktop */
+    .about-card-container .col:nth-child(1) .about-card {
+        animation-delay: 0.6s;
+    }
+
+    .about-card-container .col:nth-child(2) .about-card {
+        animation-delay: 0.8s;
+    }
+
+    .about-card-container .col:nth-child(3) .about-card {
+        animation-delay: 1.0s;
+    }
+
+    .about-card-container .col:nth-child(4) .about-card {
+        animation-delay: 1.2s;
+    }
+}
+
+/* Tablet/Laptop - Vertical Navbar Collapses (992px and below) */
+@media (max-width: 992px) {
+
+    #about {
+        /* Reset horizontal offsets */
+        margin-left: 0;
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        /* Add top padding to clear the fixed horizontal top navbar */
+        padding-top: 6rem;
+        /* Adjusted for better spacing, assuming top bar height is about 4rem */
+        padding-bottom: 4rem;
+
+        /* Remove background pattern on smaller screens */
+        background-image: none;
+        background-color: #f8f9fa;
+        /* Ensure consistent background color */
+    }
+
+    /* Reset card animation delay to base when staggered effect is off */
+    .about-card {
+        animation-delay: 0.5s !important;
+    }
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+    #about {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    #about .text-center h2 {
+        font-size: 2rem;
+    }
+
+    #about .text-center p {
+        font-size: 1rem;
+    }
+
+    .about-card {
+        padding: 1.5rem !important;
+    }
+}

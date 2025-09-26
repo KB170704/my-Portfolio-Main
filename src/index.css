@@ -1,0 +1,23 @@
+body {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://via.placeholder.com/1920x1080") center/cover no-repeat;
+}
+
+.about-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---- navbar css----- */
+

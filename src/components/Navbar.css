@@ -1,0 +1,258 @@
+/*
+  ==================================================
+  Base Navbar Styling (Vertical Sidebar)
+  ==================================================
+*/
+
+.custom-navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+    background-color: #1a1a2e;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+    transition: none;
+}
+
+.custom-navbar.scrolled {
+    background-color: #1a1a2e;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.custom-navbar .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/*
+  ==================================================
+  Brand Styling
+  ==================================================
+*/
+.brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.brand span {
+    font-weight: 300;
+    color: #ff6b6b;
+}
+
+/*
+  ==================================================
+  Nav Links Styling
+  ==================================================
+*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-grow: 1;  /* ✅ take remaining space, pushes bottom elements down */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    opacity: 1;
+    left: -15px;
+}
+
+/*
+  ==================================================
+  Profile Picture
+  ==================================================
+*/
+.profile-pic {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff6b6b;
+    margin: 6rem 0 1rem; /* ✅ spacing before button */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/*
+  ==================================================
+  Resume Button
+  ==================================================
+*/
+.resume-btn-container {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.resume-btn:hover {
+    background-color: #e65a5a;
+    border-color: #e65a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+}
+
+/*
+  ==================================================
+  Hamburger Menu
+  ==================================================
+*/
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/*
+  ==================================================
+  Mobile Responsive
+  ==================================================
+*/
+@media (max-width: 992px) {
+    .custom-navbar {
+        width: 100%;
+        height: auto;
+        padding: 1rem 1.5rem;
+        flex-direction: row;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Slide-out menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #1a1a2e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        padding-top: 4rem;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+
+    .resume-btn-container {
+        display: block;
+        width: 80%;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .resume-btn {
+        width: 100%;
+    }
+}

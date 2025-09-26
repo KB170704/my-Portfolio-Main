@@ -11,7 +11,8 @@
     padding: 6rem 0;
     overflow: hidden;
     /* New: Subtle background pattern for texture */
-    background-image: radial-gradient(#99bee4 0.5px, transparent 0.5px);
+    background-image: radial-gradient(#052c50 0.2px, transparent 0.5px);
+    background-attachment: fixed;
     /* Adjusted color */
     background-size: 15px 15px;
 

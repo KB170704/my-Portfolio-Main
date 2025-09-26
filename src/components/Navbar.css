@@ -66,7 +66,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    flex-grow: 1;  /* ✅ take remaining space, pushes bottom elements down */
+    flex-grow: 1;
     align-items: center;
     justify-content: flex-start;
 }
@@ -117,7 +117,8 @@
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #ff6b6b;
-    margin: 6rem 0 1rem; /* ✅ spacing before button */
+    margin: 6rem 0 1rem;
+    transition: transform 0.3s ease;
 }
 
 .profile-pic img {
@@ -136,8 +137,9 @@
   ==================================================
 */
 .resume-btn-container {
-    padding: 1rem 0;
+    padding-bottom: 5px;
     text-align: center;
+    width: 100%; /* Ensures container respects width for centering */
 }
 
 .resume-btn {
@@ -155,6 +157,41 @@
 }
 
 .resume-btn:hover {
+    background-color: #e65a5a;
+    border-color: #e65a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+}
+
+/*
+  ==================================================
+  CV/Mail Button - UPDATED FOR ICON ALIGNMENT
+  ==================================================
+*/
+.CV-btn-container {
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100%; /* Ensures container respects width for centering */
+}
+
+.CV-btn {
+    /* Use inline-flex to align icon and text */
+    display: inline-flex;
+    align-items: center; /* Vertically center icon and text */
+    justify-content: center; /* Center content horizontally within the button */
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.CV-btn:hover {
     background-color: #e65a5a;
     border-color: #e65a5a;
     transform: translateY(-2px);
@@ -241,8 +278,10 @@
     }
 
     .profile-pic {
+        display: none;
         width: 90px;
         height: 90px;
+        margin: 4rem 0 1rem; /* Adjusting margin for mobile menu */
     }
 
     .resume-btn-container {
@@ -254,5 +293,18 @@
 
     .resume-btn {
         width: 100%;
+    }
+
+    .CV-btn-container {
+        width: 80%; /* Match width of resume button container */
+        margin: 0; /* Remove top padding/margin if needed, already in resume-btn-container */
+    }
+
+    .CV-btn {
+        width: 100%;
+        /* Ensure flex alignment is maintained on mobile */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }

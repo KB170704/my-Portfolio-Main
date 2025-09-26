@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
+import {Mail,ArrowDownToLine} from "lucide-react";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,19 +58,32 @@ function Navbar() {
               alt="Profile"
             />
           </div>
+                {/* Resume Button */}
+                <div className="resume-btn-container">
+                    <a
+                        href="/KB-Resume.pdf"
+                        download="Kaushik_Borad_Resume.pdf"
+                        className="resume-btn"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        <ArrowDownToLine size={19} style={{ marginRight: '8px' }} /> {/* 👈🏼 ADDED ICON HERE */}
+                        CV
+                    </a>
+                </div>
 
-          {/* Resume Button */}
-          <div className="resume-btn-container">
-            <a
-              href="/KB-Resume.pdf"
-              download="Kaushik_Borad_Resume.pdf"
-              className="resume-btn"
-              onClick={() => setMenuOpen(false)}
-            >
-              Download CV
-            </a>
-          </div>
+                {/* Mail Button (CV) - FIXED TO INCLUDE LUCIDE ICON */}
+                <div className="CV-btn-container">
+                    <a
+                        href="mailto:kaushikborad238@gmail.com"
+                        className="CV-btn"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        <Mail size={18} style={{ marginRight: '8px' }} /> {/* 👈🏼 ADDED ICON HERE */}
+                        Mail
+                    </a>
+                </div>
         </ul>
+
       </div>
     </nav>
   );

@@ -240,4 +240,25 @@
     .tool-logo-box svg {
         font-size: 2rem !important;
     }
+    /* ============================================
+   MOBILE & TABLET FIX — FULL WIDTH CONTENT
+   ============================================ */
+    @media (max-width: 992px) {
+        #services {
+            margin-left: 0 !important;
+            width: 100% !important;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        #services {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
 }

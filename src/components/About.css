@@ -1,48 +1,50 @@
+/* ================================================
+   Global Theme Colors
+   ================================================ */
+:root {
+    --ash-grey: #cad2c5ff;
+    --muted-teal: #84a98cff;
+    --deep-teal: #52796fff;
+    --dark-slate-grey: #354f52ff;
+    --charcoal-blue: #2f3e46ff;
+}
+
 /*
-  ==================================================
-  Base About Section Styling - ADJUSTED FOR VERTICAL NAVBAR
-  ==================================================
+  ==================================================
+  Base About Section Styling
+  ==================================================
 */
 
 #about {
-    /* Changed background color to a lighter, more standard shade for contrast */
     background-color: #ffffff;
-    /* Changed from #ff0000 to maintain a professional look */
     padding: 6rem 0;
     overflow: hidden;
-    /* New: Subtle background pattern for texture */
-    background-image: radial-gradient(#052c50 0.2px, transparent 0.5px);
+
+    /* Background pattern updated to theme color */
+    background-image: radial-gradient(var(--deep-teal) 0.2px, transparent 0.5px);
     background-attachment: fixed;
-    /* Adjusted color */
     background-size: 15px 15px;
 
-    /* 💡 KEY FIXES for Vertical Navbar Clearance (Desktop) */
     margin-left: 250px;
-    /* Push the entire section right by the navbar width */
     width: calc(100% - 250px);
-    /* Ensure section takes up the remaining width */
-
-    /* Re-adjust horizontal padding to give space on the left side of the content */
     padding-left: 3rem;
     padding-right: 3rem;
 }
 
 /*
-  ==================================================
-  Heading Styling and Animation
-  ==================================================
+  ==================================================
+  Heading Styling and Animation
+  ==================================================
 */
 #about .text-center h2 {
     font-size: 2.5rem;
-    color: #1a1a2e;
-    position: relative;
+    color: var(--charcoal-blue);
     animation: slideInUp 0.8s ease-out;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #about .text-center h2:hover {
-    color: #ff6b6b;
-    /* Accent color highlight on hover */
+    color: var(--deep-teal);
     transform: scale(1.02);
 }
 
@@ -51,8 +53,7 @@
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #ff6b6b;
-    /* Accent color line */
+    background-color: var(--muted-teal);
     margin: 10px auto 0;
     border-radius: 2px;
     transition: width 0.4s ease-in-out;
@@ -60,30 +61,31 @@
 
 #about .text-center h2:hover::after {
     width: 90px;
-    /* Extend underline on hover */
 }
 
 #about .text-center p {
     font-size: 1.1rem;
-    color: #061f35;
+    color: var(--dark-slate-grey)!important;
     animation: fadeIn 1s ease-out 0.3s forwards;
     opacity: 0;
 }
 
 /*
-  ==================================================
-  Card Styling and Animation
-  ==================================================
+  ==================================================
+  Card Styling and Animation
+  ==================================================
 */
 .about-card {
     background-color: #ffffff;
     border: none !important;
     border-radius: 1rem !important;
     padding: 2rem !important;
-    transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
     cursor: default;
 
-    /* Base Animation: Card Pop-in */
+    /* Updated shadow */
+    box-shadow: 0 25px 35px rgba(132, 169, 140, 0.35) !important;
+
     animation: zoomIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s forwards;
     opacity: 0;
     transform: scale(0.8);
@@ -91,173 +93,114 @@
 
 .about-card:hover {
     transform: translateY(-8px);
-    /* Slightly more aggressive lift */
-    box-shadow: 0 25px 35px rgba(255, 107, 107, 0.185) !important;
-    /* Lighter, more standard shadow */
+
+    /* Hover shadow using deep teal */
+    box-shadow: 0 25px 35px rgba(82, 121, 111, 0.55) !important;
 }
 
 /*
-  ==================================================
-  MUI Component Overrides & Custom Details
-  ==================================================
+  ==================================================
+  MUI Component Overrides
+  ==================================================
 */
-/* Avatar Customization */
 .about-card .MuiAvatar-root {
-    box-shadow: 0 0 0 10px rgba(13, 110, 253, 0.3);
-    /* Ring effect */
+    box-shadow: 0 0 0 10px rgba(82, 121, 111, 0.35);
     transition: all 0.5s ease;
 }
 
 .about-card:hover .MuiAvatar-root {
-    box-shadow: 0 0 0 8px rgba(225, 107, 107, 0.4);
-    /* Accent ring on card hover */
+    box-shadow: 0 0 0 8px rgba(132, 169, 140, 0.45);
     transform: rotate(10deg);
 }
 
-/* Contact Info Styling */
+/* Contact Info */
 .about-card .MuiTypography-body1 {
     font-weight: 500;
-    color: #343a40;
+    color: var(--charcoal-blue);
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 }
 
 .about-card .MuiTypography-body1 .MuiSvgIcon-root {
-    color: #ff6b6b !important;
+    color: var(--muted-teal) !important;
     transition: transform 0.3s ease;
 }
 
 .about-card .MuiTypography-body1:hover {
-    color: #0d6efd;
-    /* Highlight text on hover */
+    color: var(--deep-teal);
 }
 
 .about-card .MuiTypography-body1:hover .MuiSvgIcon-root {
     transform: scale(1.1);
 }
 
-/* Description Text */
+/* Description */
 .about-card .mt-3 {
     line-height: 1.7;
     font-size: 1.05rem;
     padding-top: 1rem;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--ash-grey);
 }
 
 /*
-  ==================================================
-  Keyframe Animations
-  ==================================================
+  ==================================================
+  Animations
+  ==================================================
 */
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes zoomIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    60% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.8); }
+    60% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /*
-  ==================================================
-  Media Queries - ADJUSTED FOR VERTICAL NAVBAR COLLAPSE
-  ==================================================
+  ==================================================
+  Media Queries
+  ==================================================
 */
 
-/* Desktop - Vertical Navbar Active (Above 992px) */
 @media (min-width: 993px) {
-
-    /* Card Staggered Animation for Desktop */
-    .about-card-container .col:nth-child(1) .about-card {
-        animation-delay: 0.6s;
-    }
-
-    .about-card-container .col:nth-child(2) .about-card {
-        animation-delay: 0.8s;
-    }
-
-    .about-card-container .col:nth-child(3) .about-card {
-        animation-delay: 1.0s;
-    }
-
-    .about-card-container .col:nth-child(4) .about-card {
-        animation-delay: 1.2s;
-    }
+    .about-card-container .col:nth-child(1) .about-card { animation-delay: 0.6s; }
+    .about-card-container .col:nth-child(2) .about-card { animation-delay: 0.8s; }
+    .about-card-container .col:nth-child(3) .about-card { animation-delay: 1.0s; }
+    .about-card-container .col:nth-child(4) .about-card { animation-delay: 1.2s; }
 }
 
-/* Tablet/Laptop - Vertical Navbar Collapses (992px and below) */
 @media (max-width: 992px) {
-
     #about {
-        /* Reset horizontal offsets */
         margin-left: 0;
         width: 100%;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-
-        /* Add top padding to clear the fixed horizontal top navbar */
         padding-top: 6rem;
-        /* Adjusted for better spacing, assuming top bar height is about 4rem */
         padding-bottom: 4rem;
 
-        /* Remove background pattern on smaller screens */
         background-image: none;
-        background-color: #f8f9fa;
-        /* Ensure consistent background color */
+        background-color: var(--ash-grey);
     }
 
-    /* Reset card animation delay to base when staggered effect is off */
     .about-card {
         animation-delay: 0.5s !important;
     }
 }
 
-/* Mobile Devices (576px and below) */
 @media (max-width: 576px) {
     #about {
         padding-top: 5rem;
         padding-bottom: 3rem;
     }
 
-    #about .text-center h2 {
-        font-size: 2rem;
-    }
-
-    #about .text-center p {
-        font-size: 1rem;
-    }
-
-    .about-card {
-        padding: 1.5rem !important;
-    }
+    #about .text-center h2 { font-size: 2rem; }
+    #about .text-center p { font-size: 1rem; }
+    .about-card { padding: 1.5rem !important; }
 }

@@ -1,63 +1,74 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"; // Removed FaTwitter as it wasn't used
+
+// Make sure to import the CSS file
+import "./Footer.css";
 
 function Footer() {
-  return (
-    <footer className="footer bg-dark text-light pt-5 pb-3">
-      <Container>
-        <Row className="gy-4 align-items-center">
-          {/* About Section */}
-          <Col md={6} className="text-center text-md-start">
-            <h5 className="fw-bold mb-3">MyPortfolio</h5>
-            <p className="small text-muted">
-              Crafting modern, responsive, and user-friendly web applications.
-            </p>
-          </Col>
+    // Use consistent details
+    const GITHUB_LINK = "https://github.com/KaushikBorad";
+    const LINKEDIN_LINK = "https://www.linkedin.com/in/kaushik-borad-456728224/";
+    const EMAIL_ADDRESS = "kaushikborad238@gmail.com";
 
-          {/* Socials */}
-          <Col md={6} className="text-center text-md-end">
-            <h6 className="fw-bold mb-3">Connect with me</h6>
-            <div className="d-flex justify-content-center justify-content-md-end gap-3">
-              <a
-                href="kaushikborad238@gmail.com"
-                className="social-icon"
-                aria-label="Email"
-              >
-                <FaEnvelope />
-              </a>
-              <a
-                href="https://github.com/msheladiya99"
-                target="_blank"
-                rel="noreferrer"
-                className="social-icon"
-                aria-label="GitHub"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/meet-sheladiya-ba333031b/"
-                target="_blank"
-                rel="noreferrer"
-                className="social-icon"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-            </div>
-          </Col>
-        </Row>
+    return (
+        // ⭐ ADDED main-footer CLASS HERE ⭐
+        <footer className="footer main-footer bg-dark text-light pt-5 pb-3">
+            <Container>
+                <Row className="gy-4 align-items-center">
+                    {/* About Section */}
+                    <Col md={6} className="text-center text-md-start">
+                        <h5 className="fw-bold mb-3">
+                            Kaushik Borad
+                        </h5>
+                        <p className="small text-muted">
+                            Crafting modern, responsive, and scalable web applications.
+                        </p>
+                    </Col>
 
-        <hr className="border-light my-4" />
+                    {/* Socials */}
+                    <Col md={6} className="text-center text-md-end">
+                        <h6 className="fw-bold mb-3">Connect with me</h6>
+                        <div className="d-flex justify-content-center justify-content-md-end gap-3">
+                            <a
+                                href={`mailto:${EMAIL_ADDRESS}`}
+                                className="social-icon"
+                                aria-label="Email"
+                            >
+                                <FaEnvelope />
+                            </a>
+                            <a
+                                href={GITHUB_LINK}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="social-icon"
+                                aria-label="GitHub"
+                            >
+                                <FaGithub />
+                            </a>
+                            <a
+                                href={LINKEDIN_LINK}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="social-icon"
+                                aria-label="LinkedIn"
+                            >
+                                <FaLinkedin />
+                            </a>
+                        </div>
+                    </Col>
+                </Row>
 
-        <Row>
-          <Col className="text-center small text-muted">
-            © {new Date().getFullYear()} <strong>MyPortfolio</strong>. All rights reserved.
-          </Col>
-        </Row>
-      </Container>
-    </footer>
-  );
+                <hr className="border-secondary my-4" />
+
+                <Row>
+                    <Col className="text-center small text-muted">
+                        © {new Date().getFullYear()} <strong>Kaushik Borad</strong>. All rights reserved.
+                    </Col>
+                </Row>
+            </Container>
+        </footer>
+    );
 }
 
 export default Footer;

@@ -17,14 +17,14 @@ function Portfolio() {
             title: "Portfolio Website",
             img: "https://media.istockphoto.com/id/682084406/photo/retouche-at-work.jpg?s=612x612&w=0&k=20&c=0M4EMaLiWFXBBGs2VCRbf0oe9Cn3ZaTnEeiIajkbGRU=",
             desc: "My personal portfolio built with React, Bootstrap, and modern UI design. **Tech Stack: React, CSS3, Animate.css**",
-            link: "https://myportfolio-kappa-blush.vercel.app/"
+            link: "my-portfolio-main-sandy.vercel.app"
         },
         {
             icon: <Code fontSize="large" />,
             title: "Admin Dashboard",
             img: "https://media.istockphoto.com/id/2166408543/photo/young-adult-asia-female-freelance-eyeglasses-typing-write-prompt-ai-bot-it-app-smart-program.jpg?s=612x612&w=0&k=20&c=-riDkgvoYunEeThfoRO3UkWryFWFf7wtM9toaW86UOo=",
             desc: "Interactive dashboard with charts, tables, and authentication features. **Tech Stack: Express, MongoDB, React**",
-            link: "https://www.example-dashboard.com"
+            link: "https://kaushik-six.vercel.app/"
         }
     ];
 

@@ -7,8 +7,8 @@ import "./Footer.css";
 
 function Footer() {
     // Use consistent details
-    const GITHUB_LINK = "https://github.com/KaushikBorad";
-    const LINKEDIN_LINK = "https://www.linkedin.com/in/kaushik-borad-456728224/";
+    const GITHUB_LINK = "https://github.com/KB170704";
+    const LINKEDIN_LINK = "https://www.linkedin.com/in/kaushik-borad-8431a533b/";
     const EMAIL_ADDRESS = "kaushikborad238@gmail.com";
 
     return (

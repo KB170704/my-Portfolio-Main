@@ -62,7 +62,7 @@ function Navbar() {
                     {/* Resume Button */}
                     <div className="resume-btn-container">
                         <a
-                            href="D:\Portfolio\my-Portfolio-Main\public\Kaushik-Borad.pdf"
+                            href="/Kaushik-Borad.pdf"
                             download="Kaushik_Borad_Resume.pdf"
                             className="resume-btn"
                             onClick={() => setMenuOpen(false)}
@@ -71,7 +71,6 @@ function Navbar() {
                             CV
                         </a>
                     </div>
-ADD
                     {/* Mail Button (CV) */}
                     <div className="CV-btn-container">
                         <a

@@ -62,7 +62,7 @@ function Navbar() {
                     {/* Resume Button */}
                     <div className="resume-btn-container">
                         <a
-                            href="/kaushik-Borad.pdf"
+                            href="D:\Portfolio\my-Portfolio-Main\public\Kaushik-Borad.pdf"
                             download="Kaushik_Borad_Resume.pdf"
                             className="resume-btn"
                             onClick={() => setMenuOpen(false)}

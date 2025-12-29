@@ -62,7 +62,7 @@ function Contact() {
                             {/* DEDICATED CV BUTTON */}
                             <div className="contact-cv-btn-container">
                                 <a
-                                    href="/KB-Resume.pdf"
+                                    href="/Kaushik-Borad.pdf"
                                     download="Kaushik_Borad_Resume.pdf"
                                     className="contact-cv-btn"
                                 >

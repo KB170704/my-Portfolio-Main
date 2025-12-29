@@ -6,7 +6,7 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Cv from "./components/Cv";
+// import Cv from "./components/Cv";
 
 function App() {
   return (

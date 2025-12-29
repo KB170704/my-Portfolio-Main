@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.8",
     "emailjs-com": "^3.2.0",
+    "express": "^5.2.1",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
@@ -24,10 +25,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon app.js index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +47,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "baseline-browser-mapping": "^2.9.2"
+  },
+  "description": "��#\u0000 \u0000m\u0000y\u0000-\u0000P\u0000o\u0000r\u0000t\u0000f\u0000o\u0000l\u0000i\u0000o\u0000-\u0000M\u0000a\u0000i\u0000n\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KB170704/my-Portfolio-Main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KB170704/my-Portfolio-Main/issues"
+  },
+  "homepage": "https://github.com/KB170704/my-Portfolio-Main#readme"
 }
